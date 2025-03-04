@@ -38,7 +38,23 @@ export async function signup(req, res) {
         .status(400)
         .json({ success: false, message: "Username already exists" });
     }
-  } catch (error) {}
+
+    const PROFILE_PICS = ["/avatar1.png", "/avatar2.png", "/avatar3.png"];
+
+    const image = PROFILE_PICS[Math.floor(Math.random() * PROFILE_PICS.length)];
+
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+      username,
+      image,
+    });
+
+    await newUser.save();
+  } catch (error) {
+    console.los("Error in signup controller", error.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
 }
 
 export async function login(req, res) {
