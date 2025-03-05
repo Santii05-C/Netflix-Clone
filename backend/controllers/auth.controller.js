@@ -45,14 +45,14 @@ export async function signup(req, res) {
 
     const newUser = new User({
       email,
-      password: hashedPassword,
+      password,
       username,
       image,
     });
 
-    generateTokenAndSetCookie(newUser._id, res);
     await newUser.save();
 
+    // Remove password from the response
     res.status(201).json({
       success: true,
       user: {
@@ -60,9 +60,8 @@ export async function signup(req, res) {
         password: "",
       },
     });
-    await newUser.save();
   } catch (error) {
-    console.los("Error in signup controller", error.message);
+    console.log("Error in signup controller", error.message);
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 }
