@@ -17,3 +17,4 @@ export const fetchFromTMDB = async (url) => {
 
   return response.data;
 };
+//1:17
