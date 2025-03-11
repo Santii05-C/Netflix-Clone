@@ -2,6 +2,7 @@ import express from "express";
 import {
   getTrendingMovie,
   getMovieTrailers,
+  getMovieDetails,
 } from "../controllers/movie.controller.js";
 
 const router = express.Router();
