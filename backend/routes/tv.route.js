@@ -1,10 +1,11 @@
 import express from "express";
+
 import {
-  getSimilarTvs,
   getTrendingTv,
-  getTvDetails,
-  getTvsByCategory,
   getTvTrailers,
+  getTvDetails,
+  getSimilarTvs,
+  getTvsByCategory,
 } from "../controllers/tv.controller.js";
 
 const router = express.Router();
@@ -16,3 +17,4 @@ router.get("/:id/similar", getSimilarTvs);
 router.get("/:category", getTvsByCategory);
 
 export default router;
+//1:44
