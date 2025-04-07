@@ -129,5 +129,5 @@ const AuthScreen = () => {
     </div>
   );
 };
-
+//3:20
 export default AuthScreen;
