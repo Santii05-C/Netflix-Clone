@@ -29,6 +29,7 @@ export default [
         { allowConstantExport: true },
       ],
       "react/no-unescaped-entities": "off",
+      "react/prop-types": "off",
     },
   },
 ];
